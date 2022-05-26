@@ -297,7 +297,7 @@ struct Editor
     void quebra_linha(void)
     {
         // TODO
-        if (cursor_y < linhas.size() && cursor_x < strlen(linhas[cursor_y]))
+        if (cursor_y < linhas.size() && cursor_x+1 < strlen(linhas[cursor_y]))
         {
             if(linhas[cursor_y] == nullptr){
                 return ;
@@ -317,7 +317,7 @@ struct Editor
             move_baixo();
             cursor_x = 0;
         }
-        else if(cursor_y < linhas.size() && cursor_x == strlen(linhas[cursor_y]))
+         if(cursor_y <= linhas.size() && cursor_x+1 == strlen(linhas[cursor_y]))
         {   
             move_baixo();
             cursor_x = 0;
